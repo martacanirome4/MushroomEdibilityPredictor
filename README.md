@@ -43,15 +43,18 @@ Para poder utilizar la aplicación, es necesario en primer lugar navegar hasta e
  
    ```bash
    MAKE jar
+   ```
 
 Después de ejecutar make jar y crear el archivo JAR (aprendizaje.jar), se ejecuta con el comando predict, que realiza las predicciones basadas en el modelo entrenado:relacionada con la predicción.
 
    ```bash
    java -jar aprendizaje.jar predict
+   ```
 
 La aplicación mostrará por la terminal los resultados predecidos para la información de prueba aportada en test_data, indicando para cada fila detallando las cualidades de una seta, si la misma es comestible (e: edible) o venenosa (p: poisonous):
 
-<img width="1081" alt="Captura de pantalla 2023-12-30 a las 13 18 36" src="https://github.com/martacanirome4/MushroomEdibilityPredictor/assets/50625677/b657198f-e3ba-4c6e-a3d9-987dbbd57ab2">
+<img width="1154" alt="results" src="https://github.com/martacanirome4/MushroomEdibilityPredictor/assets/50625677/5ce146eb-0d2b-4885-8567-5868a503540f">
+
 
 ## **Detalles Técnicos**
 
@@ -61,14 +64,17 @@ Modelo.java contiene la lógica para leer instancias, entrenar el modelo y aplic
 ## **Conjunto de datos utilizado**
 
 El conjunto de datos utilizado consiste en atributos como forma del sombrero, color de la tapa, olor, etc. Se ha obtenido del repositorio:
+
 https://github.com/renatopp/arff-datasets/blob/master/classification/mushroom.arff
 
 Como se explica también, más detalladamente, en https://archive.ics.uci.edu/dataset/73/mushroom:
+
 "De la Guía de campo de la Sociedad Audubon; hongos descritos en términos de características físicas; clasificación: venenoso o comestible (...) Este conjunto de datos incluye descripciones de muestras hipotéticas correspondientes a 23 especies de hongos con branquias de las familias Agaricus y Lepiota (págs. 500-525). Cada especie se identifica como definitivamente comestible, definitivamente venenosa o de comestibilidad desconocida y no recomendada (...)"
 
 # Resultados obtenidos para los diferentes algoritmos
 
-Utilizando la aplicación Weka, se probaron diferentes algoritmos sobre los datos utilizadosn, con el fin de poder compararlos y elegir el mejor que sería introducido en la aplicación. Los resultados obtenidos para los diferentes algoritmos fueron:
+Utilizando la aplicación Weka, se probaron diferentes algoritmos sobre los datos utilizadosn con el fin de poder compararlos y elegir el mejor, el cual que sería introducido y utilizado en la aplicación.
+Los resultados obtenidos para los mejores algoritmos fueron:
 
    ## **J48 (ID3)**
    ```plaintext
