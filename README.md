@@ -47,10 +47,10 @@ Para poder utilizar la aplicación, es necesario en primer lugar navegar hasta e
    MAKE jar
    ```
 
-Después de ejecutar make jar y crear el archivo JAR (aprendizaje.jar), se ejecuta con el comando predict, que realiza las predicciones basadas en el modelo entrenado:relacionada con la predicción.
+Después de ejecutar make jar y crear el archivo JAR (aprendizaje.jar), se ejecuta el siguieinte comando que realiza las predicciones basadas en el modelo entrenado.
 
    ```bash
-   java -jar aprendizaje.jar predict
+   java -jar aprendizaje.jar
    ```
 
 La aplicación mostrará por la terminal los resultados predecidos para la información de prueba aportada en test_data, indicando para cada fila detallando las cualidades de una seta, si la misma es comestible (e: edible) o venenosa (p: poisonous):
