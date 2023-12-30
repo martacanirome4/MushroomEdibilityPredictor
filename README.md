@@ -8,15 +8,17 @@ Este proyecto utiliza aprendizaje automático (machine learning) para predecir s
 # **Sobre el proyecto**
 
 Para llevar a cabo el proyecto, primero se eligió el problema a predecir como la comestibilidad de setas utilizando una base de datos con información sobre estas.
-La fuente de datos consiste en un conjunto de datos históricos sobre setas. A partir de estos dartos se identificaron características como forma del sombrero, color de la tapa, y otros atributos que influyen en la comestibilidad de las setas.
+
+La fuente de datos consiste en un conjunto de datos históricos con una variedad de atributos sobre setas. A partir de estos datos se identificaron características como forma del sombrero, color de la tapa, y otros atributos que influyen en la comestibilidad de las setas.
 
 Una vez localizada la fuente de datos, se obtuvo el archivo `mushroom.arff` codificado según las características seleccionadas para su uso en Weka.
 
-Se evaluaron distintos algoritmos de aprendizaje automático utilizando la herramienta **Weka**, y se seleccionó el algoritmo con mejor rendimiento, que en este caso se trata del algoritmo **J48** (o **ID3**). Para aportar una visión general de los atributos que mejor discriminaban a este modelo, podemos observar el árbol de decisión generado por el algoritmo ID3, donde observamos que el atribito __olor__ determina de mayor manera si el hongo es venonoso.
+Se evaluaron distintos algoritmos de aprendizaje automático utilizando la herramienta **Weka**, y se seleccionó el algoritmo con mejor rendimiento, que en este caso se trataba del algoritmo **J48** (o **ID3**).
+Para aportar una visión general de los atributos que mejor discriminaban a este modelo, podemos observar el árbol de decisión generado por el algoritmo ID3, donde podemos comprobar que el atributo __odor__, que hace referencia al olor del hongo, tiene un factor muy determinante sobre al comestibilidad de este.
 
 <img width="793" alt="J48-tree-view" src="https://github.com/martacanirome4/MushroomEdibilityPredictor/assets/50625677/513ec130-8ce3-471e-8fae-2a3581863653">
 
-Al final del README se encuentran detallados los resultados obtenidos para cada uno de los algoritmos probados sobre los datos.
+**__Al final del README se encuentran detallados los resultados obtenidos para cada uno de los algoritmos probados sobre los datos.__**
 
 ## Estructura del Proyecto
 
@@ -486,7 +488,7 @@ Los resultados obtenidos para los mejores algoritmos fueron:
 
 # **Licencia**
 
-Copyright 2023 Marta Canino Romero
+Copyright 2023 Marta Canino Romero 
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
