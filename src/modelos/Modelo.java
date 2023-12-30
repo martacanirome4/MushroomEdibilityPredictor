@@ -46,7 +46,7 @@ public class Modelo {
             cls.buildClassifier(inst);
 
             // serialize model
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./models/J58.model"));
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./models/J48.model"));
             oos.writeObject(cls);
             oos.flush();
             oos.close();
@@ -61,7 +61,7 @@ public class Modelo {
             // e = edible, p = poisonous -- PREDECIMOS DADOS LOS ATRIBUTOS DE PRUEBA SI SERA COMESTIBLE O NO
             String[] valoresAtributos = {"e", "p"};
 
-            Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./models/J58.model");
+            Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./models/J48.model");
 
             Instances data = leerInstancias("./test_data/test.arff");
 
