@@ -68,17 +68,20 @@ public class Modelo {
             // Build string form results to store predictions for all instances
             StringBuilder res = new StringBuilder();
 
+             // Header for the results
+            res.append("Instance\tAttributes\t\tActual Class\tPredicted Class\n");
+            res.append("------------------------------------------------------------------------\n");
+
             for (int i = 0; i < data.numInstances(); i++) {
-                res.append(valoresAtributos[(int) clasificador.classifyInstance(data.instance(i))]);
-    
-                // Add a comma and space unless it's the last prediction
-                if (i < data.numInstances() - 1) {
-                    res.append(", ");
-                }
+                String actualClass = data.instance(i).stringValue(data.numAttributes() - 1); // Last attribute is the class
+                String predictedClass = valoresAtributos[(int) clasificador.classifyInstance(data.instance(i))];
+                String attributes = data.instance(i).toString(); // Get the attribute values for the instance
+
+                // Append instance number, attribute values, actual class, and predicted class to the result string
+                res.append(i + 1).append("\t\t").append(attributes).append("\t\t").append(actualClass).append("\t\t").append(predictedClass).append("\n");
             }
-    
+
             return res.toString();
-    
 
         }catch (Exception ex) {
             Logger.getLogger(Modelo.class.getName()).log(Level.SEVERE, null, ex);
