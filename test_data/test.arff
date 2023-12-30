@@ -1,0 +1,35 @@
+@RELATION test
+
+@ATTRIBUTE 'cap-shape' { 'b', 'c', 'f', 'k', 's', 'x'}
+@ATTRIBUTE 'cap-surface' { 'f', 'g', 's', 'y'}
+@ATTRIBUTE 'cap-color' { 'b', 'c', 'e', 'g', 'n', 'p', 'r', 'u', 'w', 'y'}
+@ATTRIBUTE 'bruises?' { 'f', 't'}
+@ATTRIBUTE 'odor' { 'a', 'c', 'f', 'l', 'm', 'n', 'p', 's', 'y'}
+@ATTRIBUTE 'gill-attachment' { 'a', 'd', 'f', 'n'}
+@ATTRIBUTE 'gill-spacing' { 'c', 'd', 'w'}
+@ATTRIBUTE 'gill-size' { 'b', 'n'}
+@ATTRIBUTE 'gill-color' { 'b', 'e', 'g', 'h', 'k', 'n', 'o', 'p', 'r', 'u', 'w', 'y'}
+@ATTRIBUTE 'stalk-shape' { 'e', 't'}
+@ATTRIBUTE 'stalk-root' { 'b', 'c', 'e', 'r', 'u', 'z'}
+@ATTRIBUTE 'stalk-surface-above-ring' { 'f', 'k', 's', 'y'}
+@ATTRIBUTE 'stalk-surface-below-ring' { 'f', 'k', 's', 'y'}
+@ATTRIBUTE 'stalk-color-above-ring' { 'b', 'c', 'e', 'g', 'n', 'o', 'p', 'w', 'y'}
+@ATTRIBUTE 'stalk-color-below-ring' { 'b', 'c', 'e', 'g', 'n', 'o', 'p', 'w', 'y'}
+@ATTRIBUTE 'veil-type' { 'p', 'u'}
+@ATTRIBUTE 'veil-color' { 'n', 'o', 'w', 'y'}
+@ATTRIBUTE 'ring-number' { 'n', 'o', 't'}
+@ATTRIBUTE 'ring-type' { 'c', 'e', 'f', 'l', 'n', 'p', 's', 'z'}
+@ATTRIBUTE 'spore-print-color' { 'b', 'h', 'k', 'n', 'o', 'r', 'u', 'w', 'y'}
+@ATTRIBUTE 'population' { 'a', 'c', 'n', 's', 'v', 'y'}
+@ATTRIBUTE 'habitat' { 'd', 'g', 'l', 'm', 'p', 'u', 'w'}
+@ATTRIBUTE 'class' { 'e', 'p'}
+
+@DATA
+%'x','s','n','t','p','f','c','n','k','e','e','s','s','w','w','p','w','o','p','k','s','u','?'
+'x','s','y','t','a','f','c','b','k','e','c','s','s','w','w','p','w','o','p','n','n','g','?'
+'b','s','w','t','l','f','c','b','n','e','c','s','s','w','w','p','w','o','p','n','n','m','?'
+'x','y','w','t','p','f','c','n','n','e','e','s','s','w','w','p','w','o','p','k','s','u','?'
+'x','s','g','f','n','f','w','b','k','t','e','s','s','w','w','p','w','o','e','n','a','g','?'
+%
+%
+%
