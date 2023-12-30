@@ -33,7 +33,7 @@ Para aportar una visión general de los atributos que mejor discriminaban a este
 - Java (JRE)
 - Weka (biblioteca para aprendizaje automático en Java)
 
-## **A cerca del programa**
+## **Acerca del programa**
    
    El proyecto implementa un programa de prototipo de aplicación que consultando el objeto persistente de modelo generado por Weka y cargando en memoria el objeto persistente, lo entrena para poder realizar predicciones sobre los datos aportados y obtener el resultado predecido.
    
