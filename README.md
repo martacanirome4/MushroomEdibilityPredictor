@@ -62,8 +62,7 @@ La aplicación mostrará por la terminal los resultados predecidos para la infor
 
 ## **Detalles Técnicos**
 
-El código fuente está en el directorio modelos/.
-Modelo.java contiene la lógica para leer instancias, entrenar el modelo y aplicar predicciones.
+El código fuente está en el directorio modelos/. Modelo.java contiene la lógica para leer instancias, entrenar el modelo y aplicar predicciones.
 
 ## **Conjunto de datos utilizado**
 
@@ -77,8 +76,8 @@ Como se explica también, más detalladamente, en https://archive.ics.uci.edu/da
 
 # Resultados obtenidos para los diferentes algoritmos
 
-Utilizando la aplicación Weka, se probaron diferentes algoritmos sobre los datos utilizadosn con el fin de poder compararlos y elegir el mejor, el cual que sería introducido y utilizado en la aplicación.
-Los resultados obtenidos para los mejores algoritmos fueron:
+Utilizando la aplicación Weka, se probaron diferentes algoritmos sobre los datos utilizados con el fin de poder compararlos y elegir el de mayor rendimiento, para más tarde introducido como modelo en la aplicación.
+A  continuación se muestran los resultados obtenidos para los algoritmos con mayor rendimiento:
 
    ## **J48 (ID3)**
    ```plaintext
