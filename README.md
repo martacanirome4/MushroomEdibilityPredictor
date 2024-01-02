@@ -1,6 +1,6 @@
 # **Proyecto de Aprendizaje Automático - Predicción de Comestibilidad de Setas** (Mushroom Edibility Predictor)
 
-## __Marta Canino y Yolanda Llop__
+## Marta Canino y Yolanda Llop
 
 Este proyecto utiliza aprendizaje automático (machine learning) para predecir si un hongo es comestible o venenoso basándose en sus atributos. El modelo se entrena con un conjunto de datos de entrenamiento de hongos y luego se utiliza para hacer predicciones sobre un conjunto de datos de prueba.
 
@@ -35,7 +35,7 @@ Para aportar una visión general de los atributos que mejor discriminaban a este
 
 ## **Acerca del programa**
    
-   El proyecto implementa un programa de prototipo de aplicación que consultando el objeto persistente de modelo generado por Weka y cargando en memoria el objeto persistente, lo entrena para poder realizar predicciones sobre los datos aportados y obtener el resultado predecido.
+   Este proyecto implementa un prototipo de aplicación que, consultando el objeto persistente de modelo generado por Weka y cargando en memoria el objeto persistente, lo entrena para poder realizar predicciones sobre los datos aportados y obtener el resultado predecido.
    
    1. Entrenar el Modelo: La aplicación entrena el modelo utilizando el algoritmo J48 utilizando la información y registros sobre setas aportados en training_data, en el formato .arff, y guarda el modelo en el directorio models/.
    
@@ -76,7 +76,7 @@ Como se explica también, más detalladamente, en https://archive.ics.uci.edu/da
 
 # Resultados obtenidos para los diferentes algoritmos
 
-Utilizando la aplicación Weka, se probaron diferentes algoritmos sobre los datos utilizados con el fin de poder compararlos y elegir el de mayor rendimiento, para más tarde introducido como modelo en la aplicación.
+Utilizando la aplicación Weka, se probaron diferentes algoritmos sobre los datos utilizados con el fin de poder compararlos y elegir el de mayor rendimiento, para más tarde introducirlo como modelo en la aplicación.
 A  continuación se muestran los resultados obtenidos para los algoritmos con mayor rendimiento:
 
    ## **J48 (ID3)**
