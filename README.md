@@ -47,16 +47,19 @@ Para poder utilizar la aplicación:
 1. Clona este repositorio
 2. Navega en la terminal hasta el directorio que contiene el proyecto
 3. Ejecuta el siguiente comando desde la terminal para  compilar y empaquetar el proyecto en un archivo JAR:
+   
    ```bash
    MAKE jar
    ```
-4. Ejecuta este siguiente comando que realiza las predicciones basadas en el modelo entrenado:
+4. Ejecuta este comando para realizar las predicciones basadas en el modelo entrenado:
+   
    ```bash
    java -jar aprendizaje.jar
    ```
 
 La aplicación mostrará por la terminal los resultados predecidos.
-Para los datos de prueba **test_data**, y las cualidades de cada seta, muestra si la misma es **comestible** (**e**: edible) o **venenosa** (**p**: poisonous):
+
+Para los datos de prueba **test_data** y unos atributos determinados, muestra si cada seta es **comestible** (**e**: edible) o **venenosa** (**p**: poisonous):
 
 <img width="1154" alt="results" src="https://github.com/martacanirome4/MushroomEdibilityPredictor/assets/50625677/5ce146eb-0d2b-4885-8567-5868a503540f">
 
