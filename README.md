@@ -43,34 +43,33 @@ Para aportar una visión general de los atributos que mejor discriminaban a este
 
 ## **Uso**
 
-Para poder utilizar la aplicación, es necesario en primer lugar navegar hasta el directorio que contiene el proyecto y ejecutar el siguiente comando desde la terminal para  compilar y empaquetar el proyecto en un archivo JAR:
- 
+Para poder utilizar la aplicación:
+1. Clona este repositorio
+2. Navega en la terminal hasta el directorio que contiene el proyecto
+3. Ejecuta el siguiente comando desde la terminal para  compilar y empaquetar el proyecto en un archivo JAR:
    ```bash
    MAKE jar
    ```
-
-Después de ejecutar make jar y crear el archivo JAR (aprendizaje.jar), se ejecuta el siguieinte comando que realiza las predicciones basadas en el modelo entrenado.
-
+4. Ejecuta este siguiente comando que realiza las predicciones basadas en el modelo entrenado:
    ```bash
    java -jar aprendizaje.jar
    ```
 
-La aplicación mostrará por la terminal los resultados predecidos para la información de prueba aportada en test_data, indicando para cada fila detallando las cualidades de una seta, si la misma es comestible (e: edible) o venenosa (p: poisonous):
+La aplicación mostrará por la terminal los resultados predecidos.
+Para los datos de prueba **test_data**, y las cualidades de cada seta, muestra si la misma es **comestible** (**e**: edible) o **venenosa** (**p**: poisonous):
 
 <img width="1154" alt="results" src="https://github.com/martacanirome4/MushroomEdibilityPredictor/assets/50625677/5ce146eb-0d2b-4885-8567-5868a503540f">
 
 
-## **Detalles Técnicos**
-
-El código fuente está en el directorio modelos/. Modelo.java contiene la lógica para leer instancias, entrenar el modelo y aplicar predicciones.
-
 ## **Conjunto de datos utilizado**
 
-El conjunto de datos utilizado consiste en atributos como forma del sombrero, color de la tapa, olor, etc. Se ha obtenido del repositorio:
+El conjunto de datos utilizado consiste en atributos como forma del sombrero, color de la tapa, olor, habitat, anillos, etc. Los datos se han obtenido del siguiente repositorio **arff-datasets**:
 
 https://github.com/renatopp/arff-datasets/blob/master/classification/mushroom.arff
 
-Como se explica también, más detalladamente, en https://archive.ics.uci.edu/dataset/73/mushroom:
+Aunque también hay información al respecto y más detallada en el repositorio de Aprendizaje Automático de **UC Irvine**:
+
+https://archive.ics.uci.edu/dataset/73/mushroom:
 
 "De la Guía de campo de la Sociedad Audubon; hongos descritos en términos de características físicas; clasificación: venenoso o comestible (...) Este conjunto de datos incluye descripciones de muestras hipotéticas correspondientes a 23 especies de hongos con branquias de las familias Agaricus y Lepiota (págs. 500-525). Cada especie se identifica como definitivamente comestible, definitivamente venenosa o de comestibilidad desconocida y no recomendada (...)"
 
