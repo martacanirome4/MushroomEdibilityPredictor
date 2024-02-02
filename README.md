@@ -1,7 +1,5 @@
 # **Proyecto de Aprendizaje Automático - Predicción de Comestibilidad de Setas** (Mushroom Edibility Predictor)
 
-## Marta Canino y Yolanda Llop
-
 Este proyecto utiliza aprendizaje automático (machine learning) para predecir si un hongo es comestible o venenoso basándose en sus atributos. El modelo se entrena con un conjunto de datos de entrenamiento de hongos y luego se utiliza para hacer predicciones sobre un conjunto de datos de prueba.
 
 ![mushroom](https://github.com/martacanirome4/mushroom-predictor/assets/50625677/bccd9e83-a9b2-486f-88ad-23554722d7ec)
