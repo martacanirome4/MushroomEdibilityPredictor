@@ -1,491 +1,133 @@
-# **Proyecto de Aprendizaje Automático - Predicción de Comestibilidad de Setas** (Mushroom Edibility Predictor)
+# 🍄 Proyecto de Aprendizaje Automático - Predicción de Comestibilidad de Setas
 
-Este proyecto utiliza aprendizaje automático (machine learning) para predecir si un hongo es comestible o venenoso basándose en sus atributos. El modelo se entrena con un conjunto de datos de entrenamiento de hongos y luego se utiliza para hacer predicciones sobre un conjunto de datos de prueba.
+![Version](https://img.shields.io/badge/version-1.0.0-green)
+![Java](https://img.shields.io/badge/language-Java-blue)
+![Weka](https://img.shields.io/badge/tool-Weka-orange)
+![License](https://img.shields.io/badge/license-Apache%202.0-lightgrey)
+
+**Predice si un hongo es comestible o venenoso basándose en atributos mediante Aprendizaje Automático (ML)**  
+Entrenado con el algoritmo **J48 (ID3)** y datos históricos reales sobre setas, este proyecto usa **Weka** y Java para predecir la comestibilidad de nuevas muestras.
 
 ![mushroom](https://github.com/martacanirome4/mushroom-predictor/assets/50625677/bccd9e83-a9b2-486f-88ad-23554722d7ec)
 
+---
 
-# **Sobre el proyecto**
+## 🌟 Descripción
 
-Para llevar a cabo el proyecto, primero se eligió el problema a predecir como la comestibilidad de setas utilizando una base de datos con información sobre estas.
-
-La fuente de datos consiste en un conjunto de datos históricos con una variedad de atributos sobre setas. A partir de estos datos se identificaron características como forma del sombrero, color de la tapa, y otros atributos que influyen en la comestibilidad de las setas.
-
-Una vez localizada la fuente de datos, se obtuvo el archivo `mushroom.arff` codificado según las características seleccionadas para su uso en Weka.
-
-Se evaluaron distintos algoritmos de aprendizaje automático utilizando la herramienta **Weka**, y se seleccionó el algoritmo con mejor rendimiento, que en este caso se trataba del algoritmo **J48** (o **ID3**).
-Para aportar una visión general de los atributos que mejor discriminaban a este modelo, podemos observar el árbol de decisión generado por el algoritmo ID3, donde podemos comprobar que el atributo __odor__, que hace referencia al olor del hongo, tiene un factor muy determinante sobre al comestibilidad de este.
+1. Se eligió el problema de predicción sobre si una seta es **comestible** o **venenosa**.
+2. Se utilizó el dataset `mushroom.arff` con atributos como olor, forma del sombrero, color, hábitat...
+3. Se evaluaron varios algoritmos en **Weka** y se seleccionó **J48** por su precisión.
+4. El modelo entrenado se usa para predecir datos nuevos y mostrar los resultados.
 
 <img width="793" alt="J48-tree-view" src="https://github.com/martacanirome4/MushroomEdibilityPredictor/assets/50625677/513ec130-8ce3-471e-8fae-2a3581863653">
 
-**__Al final del README se encuentran detallados los resultados obtenidos para cada uno de los algoritmos probados sobre los datos.__**
+> El atributo **odor** (olor) es el más determinante según el árbol generado.
 
-## Estructura del Proyecto
+---
 
-- `training_data/`: Contiene el conjunto de datos de entrenamiento en formato ARFF.
-- `test_data/`: Contiene el conjunto de datos de prueba en formato ARFF.
-- `models/`: Almacena el modelo entrenado después de ejecutar el programa.
+## 🔍 Estructura del Proyecto
 
-## **Requisitos**
+- `training_data/` - Datos de entrenamiento (`.arff`)
+- `test_data/` - Datos de prueba (`.arff`)
+- `models/` - Modelos entrenados
+
+---
+
+## 📅 Requisitos
 
 - Java (JRE)
-- Weka (biblioteca para aprendizaje automático en Java)
+- Weka (ML para Java)
 
-## **Acerca del programa**
-   
-   Este proyecto implementa un prototipo de aplicación que, consultando el objeto persistente de modelo generado por Weka y cargando en memoria el objeto persistente, lo entrena para poder realizar predicciones sobre los datos aportados y obtener el resultado predecido.
-   
-   1. Entrenar el Modelo: La aplicación entrena el modelo utilizando el algoritmo J48 utilizando la información y registros sobre setas aportados en training_data, en el formato .arff, y guarda el modelo en el directorio models/.
-   
-   2. Realizar predicciones: Se utiliza el modelo entrenado para hacer predicciones sobre el conjunto de datos de prueba, y a continuación muestra los resultados en la consola.
+---
 
-## **Uso**
+## 🚀 Uso del Programa
 
-Para poder utilizar la aplicación:
-1. Clona este repositorio
-2. Navega en la terminal hasta el directorio que contiene el proyecto
-3. Ejecuta el siguiente comando desde la terminal para  compilar y empaquetar el proyecto en un archivo JAR:
-   
-   ```bash
-   MAKE jar
-   ```
-4. Ejecuta este comando para realizar las predicciones basadas en el modelo entrenado:
-   
-   ```bash
-   java -jar aprendizaje.jar
-   ```
-
-La aplicación mostrará por la terminal los resultados predecidos.
-
-Para los datos de prueba **test_data** y unos atributos determinados, muestra si cada seta es **comestible** (**e**: edible) o **venenosa** (**p**: poisonous):
+1. Clona el repositorio
+2. Navega al directorio del proyecto
+3. Compila y empaqueta en `.jar`:
+```bash
+make jar
+```
+4. Ejecuta el programa:
+```bash
+java -jar aprendizaje.jar
+```
+> Resultado: Muestra si cada seta es **comestible** (`e`) o **venenosa** (`p`).
 
 <img width="1154" alt="results" src="https://github.com/martacanirome4/MushroomEdibilityPredictor/assets/50625677/5ce146eb-0d2b-4885-8567-5868a503540f">
 
+---
 
-## **Conjunto de datos utilizado**
+## 📊 Conjunto de Datos
 
-El conjunto de datos utilizado consiste en atributos como forma del sombrero, color de la tapa, olor, habitat, anillos, etc. Los datos se han obtenido del siguiente repositorio **arff-datasets**:
+- Fuente: [arff-datasets](https://github.com/renatopp/arff-datasets/blob/master/classification/mushroom.arff)
+- Dataset original: [UC Irvine ML Repository](https://archive.ics.uci.edu/dataset/73/mushroom)
 
-https://github.com/renatopp/arff-datasets/blob/master/classification/mushroom.arff
+Atributos como: forma del sombrero, olor, hábitat, anillos...
 
-Aunque también hay información al respecto y más detallada en el repositorio de Aprendizaje Automático de **UC Irvine**:
+> Proveniente de la Guía de campo de la Sociedad Audubon con descripciones de 23 especies de hongos.
 
-https://archive.ics.uci.edu/dataset/73/mushroom:
+---
 
-"De la Guía de campo de la Sociedad Audubon; hongos descritos en términos de características físicas; clasificación: venenoso o comestible (...) Este conjunto de datos incluye descripciones de muestras hipotéticas correspondientes a 23 especies de hongos con branquias de las familias Agaricus y Lepiota (págs. 500-525). Cada especie se identifica como definitivamente comestible, definitivamente venenosa o de comestibilidad desconocida y no recomendada (...)"
+## 🤖 Implementación de ML en Java con Weka
 
-# Resultados obtenidos para los diferentes algoritmos
+Este proyecto utiliza la biblioteca **Weka**, muy conocida en entornos educativos y de prototipado, que permite crear, entrenar y guardar modelos de aprendizaje automático en Java. El modelo J48 es **serializado** y cargado desde disco, lo que permite hacer predicciones sin tener que reentrenar, optimizando tiempo y recursos. Los datos están en formato `.arff`, un formato clásico en ML que describe atributos y valores de forma estructurada.
 
-Utilizando la aplicación Weka, se probaron diferentes algoritmos sobre los datos utilizados con el fin de poder compararlos y elegir el de mayor rendimiento, para más tarde introducirlo como modelo en la aplicación.
-A  continuación se muestran los resultados obtenidos para los algoritmos con mayor rendimiento:
+---
 
-   ## **J48 (ID3)**
-   ```plaintext
-      === Run information ===
-      
-      Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
-      Relation:     mushroom
-      Instances:    8124
-      Attributes:   23
-                    cap-shape
-                    cap-surface
-                    cap-color
-                    bruises?
-                    odor
-                    gill-attachment
-                    gill-spacing
-                    gill-size
-                    gill-color
-                    stalk-shape
-                    stalk-root
-                    stalk-surface-above-ring
-                    stalk-surface-below-ring
-                    stalk-color-above-ring
-                    stalk-color-below-ring
-                    veil-type
-                    veil-color
-                    ring-number
-                    ring-type
-                    spore-print-color
-                    population
-                    habitat
-                    class
-      Test mode:    10-fold cross-validation
-      
-      === Classifier model (full training set) ===
-      
-      J48 pruned tree
-      ------------------
-      
-      odor = a: e (400.0)
-      odor = c: p (192.0)
-      odor = f: p (2160.0)
-      odor = l: e (400.0)
-      odor = m: p (36.0)
-      odor = n
-      |   spore-print-color = b: e (48.0)
-      |   spore-print-color = h: e (48.0)
-      |   spore-print-color = k: e (1296.0)
-      |   spore-print-color = n: e (1344.0)
-      |   spore-print-color = o: e (48.0)
-      |   spore-print-color = r: p (72.0)
-      |   spore-print-color = u: e (0.0)
-      |   spore-print-color = w
-      |   |   gill-size = b: e (528.0)
-      |   |   gill-size = n
-      |   |   |   gill-spacing = c: p (32.0)
-      |   |   |   gill-spacing = d: e (0.0)
-      |   |   |   gill-spacing = w
-      |   |   |   |   population = a: e (0.0)
-      |   |   |   |   population = c: p (16.0)
-      |   |   |   |   population = n: e (0.0)
-      |   |   |   |   population = s: e (0.0)
-      |   |   |   |   population = v: e (48.0)
-      |   |   |   |   population = y: e (0.0)
-      |   spore-print-color = y: e (48.0)
-      odor = p: p (256.0)
-      odor = s: p (576.0)
-      odor = y: p (576.0)
-      
-      Number of Leaves  : 	25
-      
-      Size of the tree : 	30
-      
-      
-      Time taken to build model: 0.01 seconds
-      
-      === Stratified cross-validation ===
-      === Summary ===
-      
-      Correctly Classified Instances        8124              100      %
-      Incorrectly Classified Instances         0                0      %
-      Kappa statistic                          1     
-      Mean absolute error                      0     
-      Root mean squared error                  0     
-      Relative absolute error                  0      %
-      Root relative squared error              0      %
-      Total Number of Instances             8124     
-      
-      === Detailed Accuracy By Class ===
-      
-                       TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                       1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     e
-                       1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     p
-      Weighted Avg.    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     
-      
-      === Confusion Matrix ===
-      
-          a    b   <-- classified as
-       4208    0 |    a = e
-          0 3916 |    b = p
-   ```
+## 🧬 J48 (ID3): El Árbol Clásico pero Poderoso
 
- ## **Random Forest**
-   ```plaintext
-   === Run information ===
-   
-   Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
-   Relation:     mushroom
-   Instances:    8124
-   Attributes:   23
-                 cap-shape
-                 cap-surface
-                 cap-color
-                 bruises?
-                 odor
-                 gill-attachment
-                 gill-spacing
-                 gill-size
-                 gill-color
-                 stalk-shape
-                 stalk-root
-                 stalk-surface-above-ring
-                 stalk-surface-below-ring
-                 stalk-color-above-ring
-                 stalk-color-below-ring
-                 veil-type
-                 veil-color
-                 ring-number
-                 ring-type
-                 spore-print-color
-                 population
-                 habitat
-                 class
-   Test mode:    10-fold cross-validation
-   
-   === Classifier model (full training set) ===
-   
-   RandomForest
-   
-   Bagging with 100 iterations and base learner
-   
-   weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
-   
-   Time taken to build model: 0.25 seconds
-   
-   === Stratified cross-validation ===
-   === Summary ===
-   
-   Correctly Classified Instances        8124              100      %
-   Incorrectly Classified Instances         0                0      %
-   Kappa statistic                          1     
-   Mean absolute error                      0.0004
-   Root mean squared error                  0.0031
-   Relative absolute error                  0.0756 %
-   Root relative squared error              0.6126 %
-   Total Number of Instances             8124     
-   
-   === Detailed Accuracy By Class ===
-   
-                    TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     e
-                    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     p
-   Weighted Avg.    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     
-   
-   === Confusion Matrix ===
-   
-       a    b   <-- classified as
-    4208    0 |    a = e
-       0 3916 |    b = p
-   ```
+- Basado en **ID3**, usa **entropía** e **información ganada** para elegir qué atributo usar en cada nodo.
+- Se **poda** para evitar sobreajuste (overfitting).
+- El atributo **odor** sale como raíz porque tiene la **mayor ganancia de información**: su valor predice fuertemente la comestibilidad.
+- Muy usado en medicina, agricultura, bioinformática…
 
-   ## **Random Tree**
-   ```plaintext
-   === Run information ===
-   
-   Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
-   Relation:     mushroom
-   Instances:    8124
-   Attributes:   23
-                 cap-shape
-                 cap-surface
-                 cap-color
-                 bruises?
-                 odor
-                 gill-attachment
-                 gill-spacing
-                 gill-size
-                 gill-color
-                 stalk-shape
-                 stalk-root
-                 stalk-surface-above-ring
-                 stalk-surface-below-ring
-                 stalk-color-above-ring
-                 stalk-color-below-ring
-                 veil-type
-                 veil-color
-                 ring-number
-                 ring-type
-                 spore-print-color
-                 population
-                 habitat
-                 class
-   Test mode:    10-fold cross-validation
-   
-   === Classifier model (full training set) ===
-   
-   
-   RandomTree
-   ==========
-   
-   stalk-color-below-ring = b : p (432/0)
-   stalk-color-below-ring = c : p (36/0)
-   stalk-color-below-ring = e : e (96/0)
-   stalk-color-below-ring = g : e (576/0)
-   stalk-color-below-ring = n
-   |   stalk-surface-above-ring = f : e (24/0)
-   |   stalk-surface-above-ring = k : p (448/0)
-   |   stalk-surface-above-ring = s : e (24/0)
-   |   stalk-surface-above-ring = y : e (16/0)
-   stalk-color-below-ring = o : e (192/0)
-   stalk-color-below-ring = p
-   |   ring-type = c : e (0/0)
-   |   ring-type = e : p (864/0)
-   |   ring-type = f : e (0/0)
-   |   ring-type = l : p (432/0)
-   |   ring-type = n : e (0/0)
-   |   ring-type = p : e (576/0)
-   |   ring-type = s : e (0/0)
-   |   ring-type = z : e (0/0)
-   stalk-color-below-ring = w
-   |   population = a : e (384/0)
-   |   population = c
-   |   |   cap-color = b : e (24/0)
-   |   |   cap-color = c : e (0/0)
-   |   |   cap-color = e : e (24/0)
-   |   |   cap-color = g : e (0/0)
-   |   |   cap-color = n : e (24/0)
-   |   |   cap-color = p : e (24/0)
-   |   |   cap-color = r : e (0/0)
-   |   |   cap-color = u : e (0/0)
-   |   |   cap-color = w : p (8/0)
-   |   |   cap-color = y : e (0/0)
-   |   population = n : e (400/0)
-   |   population = s
-   |   |   gill-size = b
-   |   |   |   habitat = d : e (0/0)
-   |   |   |   habitat = g
-   |   |   |   |   stalk-root = b
-   |   |   |   |   |   bruises? = f : e (16.41/0)
-   |   |   |   |   |   bruises? = t : p (72/0)
-   |   |   |   |   stalk-root = c : e (157.16/0)
-   |   |   |   |   stalk-root = e : e (471.49/0)
-   |   |   |   |   stalk-root = r : e (58.94/0)
-   |   |   |   |   stalk-root = u : e (0/0)
-   |   |   |   |   stalk-root = z : e (0/0)
-   |   |   |   habitat = l : e (0/0)
-   |   |   |   habitat = m : e (128/0)
-   |   |   |   habitat = p : e (48/0)
-   |   |   |   habitat = u : p (72/0)
-   |   |   |   habitat = w : e (0/0)
-   |   |   gill-size = n : p (224/0)
-   |   population = v
-   |   |   gill-color = b : p (864/0)
-   |   |   gill-color = e : e (0/0)
-   |   |   gill-color = g
-   |   |   |   cap-surface = f
-   |   |   |   |   odor = a : e (0/0)
-   |   |   |   |   odor = c : p (12/0)
-   |   |   |   |   odor = f : e (0/0)
-   |   |   |   |   odor = l : e (0/0)
-   |   |   |   |   odor = m : e (0/0)
-   |   |   |   |   odor = n : e (12/0)
-   |   |   |   |   odor = p : e (0/0)
-   |   |   |   |   odor = s : e (0/0)
-   |   |   |   |   odor = y : e (0/0)
-   |   |   |   cap-surface = g : e (0/0)
-   |   |   |   cap-surface = s : p (24/0)
-   |   |   |   cap-surface = y : p (12/0)
-   |   |   gill-color = h
-   |   |   |   bruises? = f : e (6/0)
-   |   |   |   bruises? = t : p (48/0)
-   |   |   gill-color = k
-   |   |   |   bruises? = f : e (12/0)
-   |   |   |   bruises? = t : p (32/0)
-   |   |   gill-color = n
-   |   |   |   gill-size = b : e (72/0)
-   |   |   |   gill-size = n
-   |   |   |   |   odor = a : e (16/0)
-   |   |   |   |   odor = c : p (24/0)
-   |   |   |   |   odor = f : e (0/0)
-   |   |   |   |   odor = l : e (16/0)
-   |   |   |   |   odor = m : e (0/0)
-   |   |   |   |   odor = n : e (12/0)
-   |   |   |   |   odor = p : p (32/0)
-   |   |   |   |   odor = s : e (0/0)
-   |   |   |   |   odor = y : e (0/0)
-   |   |   gill-color = o : e (0/0)
-   |   |   gill-color = p
-   |   |   |   cap-surface = f
-   |   |   |   |   bruises? = f
-   |   |   |   |   |   habitat = d : p (12/0)
-   |   |   |   |   |   habitat = g : e (0/0)
-   |   |   |   |   |   habitat = l : e (0/0)
-   |   |   |   |   |   habitat = m : e (0/0)
-   |   |   |   |   |   habitat = p : e (0/0)
-   |   |   |   |   |   habitat = u : e (12/0)
-   |   |   |   |   |   habitat = w : e (0/0)
-   |   |   |   |   bruises? = t : e (52/0)
-   |   |   |   cap-surface = g : e (0/0)
-   |   |   |   cap-surface = s
-   |   |   |   |   cap-color = b : p (16/0)
-   |   |   |   |   cap-color = c : e (0/0)
-   |   |   |   |   cap-color = e : e (0/0)
-   |   |   |   |   cap-color = g : p (20/0)
-   |   |   |   |   cap-color = n : p (8/0)
-   |   |   |   |   cap-color = p : p (4/0)
-   |   |   |   |   cap-color = r : e (0/0)
-   |   |   |   |   cap-color = u : e (0/0)
-   |   |   |   |   cap-color = w
-   |   |   |   |   |   gill-size = b : p (16/0)
-   |   |   |   |   |   gill-size = n
-   |   |   |   |   |   |   spore-print-color = b : e (0/0)
-   |   |   |   |   |   |   spore-print-color = h : e (0/0)
-   |   |   |   |   |   |   spore-print-color = k : p (6/0)
-   |   |   |   |   |   |   spore-print-color = n
-   |   |   |   |   |   |   |   odor = a : e (2/0)
-   |   |   |   |   |   |   |   odor = c : p (2/0)
-   |   |   |   |   |   |   |   odor = f : e (0/0)
-   |   |   |   |   |   |   |   odor = l : e (2/0)
-   |   |   |   |   |   |   |   odor = m : e (0/0)
-   |   |   |   |   |   |   |   odor = n : e (0/0)
-   |   |   |   |   |   |   |   odor = p : p (4/0)
-   |   |   |   |   |   |   |   odor = s : e (0/0)
-   |   |   |   |   |   |   |   odor = y : e (0/0)
-   |   |   |   |   |   |   spore-print-color = o : e (0/0)
-   |   |   |   |   |   |   spore-print-color = r : e (0/0)
-   |   |   |   |   |   |   spore-print-color = u : e (4/0)
-   |   |   |   |   |   |   spore-print-color = w : e (0/0)
-   |   |   |   |   |   |   spore-print-color = y : e (0/0)
-   |   |   |   |   cap-color = y : e (8/0)
-   |   |   |   cap-surface = y
-   |   |   |   |   habitat = d : e (42/0)
-   |   |   |   |   habitat = g : p (8/0)
-   |   |   |   |   habitat = l : e (0/0)
-   |   |   |   |   habitat = m : e (0/0)
-   |   |   |   |   habitat = p : e (0/0)
-   |   |   |   |   habitat = u : p (8/0)
-   |   |   |   |   habitat = w : e (0/0)
-   |   |   gill-color = r : p (24/0)
-   |   |   gill-color = u
-   |   |   |   stalk-shape = e
-   |   |   |   |   cap-shape = b : e (0/0)
-   |   |   |   |   cap-shape = c : e (0/0)
-   |   |   |   |   cap-shape = f : e (3/0)
-   |   |   |   |   cap-shape = k : e (0/0)
-   |   |   |   |   cap-shape = s : e (0/0)
-   |   |   |   |   cap-shape = x
-   |   |   |   |   |   odor = a : e (0/0)
-   |   |   |   |   |   odor = c : p (24/0)
-   |   |   |   |   |   odor = f : e (0/0)
-   |   |   |   |   |   odor = l : e (0/0)
-   |   |   |   |   |   odor = m : e (0/0)
-   |   |   |   |   |   odor = n : e (3/0)
-   |   |   |   |   |   odor = p : e (0/0)
-   |   |   |   |   |   odor = s : e (0/0)
-   |   |   |   |   |   odor = y : e (0/0)
-   |   |   |   stalk-shape = t : e (72/0)
-   |   |   gill-color = w
-   |   |   |   habitat = d : e (110/0)
-   |   |   |   habitat = g : p (52/0)
-   |   |   |   habitat = l : e (0/0)
-   |   |   |   habitat = m : p (12/0)
-   |   |   |   habitat = p : e (16/0)
-   |   |   |   habitat = u : p (40/0)
-   |   |   |   habitat = w : e (0/0)
-   |   |   gill-color = y : e (0/0)
-   |   population = y : e (472/0)
-   stalk-color-below-ring = y : p (24/0)
-   
-   Size of the tree : 169
-   
-   Time taken to build model: 0 seconds
-   
-   === Stratified cross-validation ===
-   === Summary ===
-   
-   Correctly Classified Instances        8124              100      %
-   Incorrectly Classified Instances         0                0      %
-   Kappa statistic                          1     
-   Mean absolute error                      0     
-   Root mean squared error                  0     
-   Relative absolute error                  0      %
-   Root relative squared error              0      %
-   Total Number of Instances             8124     
-   
-   === Detailed Accuracy By Class ===
-   
-                    TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     e
-                    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     p
-   Weighted Avg.    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     
-   
-   === Confusion Matrix ===
-   
-       a    b   <-- classified as
-    4208    0 |    a = e
-       0 3916 |    b = p
-   ```
+---
+
+## 🌲 Random Forest y Random Tree: Más Random, Más Potencia
+
+- **Random Forest**: combina muchos árboles diferentes → más robusto, menos riesgo de sobreajuste.
+- **Random Tree**: más aleatorio, puede ser más rápido pero menos estable.
+    
+---
+
+## 📊 Comparativa de Algoritmos (Weka)
+
+### 💡 J48 (ID3)
+- 🌟 Precisión: 100%
+- Tiempo: 0.01 s
+- Algoritmo basado en **árboles de decisión**, usa **ganancia de información** para decidir qué atributo dividir.
+- Gran interpretabilidad: fácil de entender el porqué de cada predicción.
+
+### 🌳 Random Forest
+- 🌟 Precisión: 100%
+- Tiempo: 0.25 s
+- Combina **muchos árboles** con selección aleatoria de atributos → más robusto, menos overfitting.
+
+### 🌳 Random Tree
+- 🌟 Precisión: 100%
+- Crea un solo árbol con decisiones aleatorias → más rápido pero menos estable.
+
+> Todos los algoritmos mostraron un rendimiento excelente (100% accuracy) con este dataset. **J48** se eligió por su interpretabilidad y rapidez.
+
+---
+
+## 📖 Licencia
+
+Apache License 2.0  
+[Ver licencia](http://www.apache.org/licenses/LICENSE-2.0)
+
+---
+
+## 👨‍💻 Autoría
+
+Marta Canino Romero  
+[@martacanirome4](https://github.com/martacanirome4)  
+GitHub 2023
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=martacanirome4&show_icons=true&theme=merko)
+
+---
 
 # **Licencia**
 
